@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8aH-sJ-c2i">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Detail View Controller-->
+        <scene sceneID="dvB-G9-ujS">
+            <objects>
+                <viewController id="fmd-VD-Pzd" customClass="DetailViewController" customModule="StarWarsUniverse" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L0f-ku-arY"/>
+                        <viewControllerLayoutGuide type="bottom" id="Sbq-0D-gYb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qay-qS-Ao0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGe-ik-DDR">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="vfG-Ap-plM"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="play" id="OPo-eh-Xgc">
+                                        <connections>
+                                            <action selector="playButtonAction:" destination="fmd-VD-Pzd" id="X6q-ax-Ftd"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="DTB-VA-kq6"/>
+                                    <barButtonItem title="Wiki" id="sb2-tO-yuJ">
+                                        <connections>
+                                            <action selector="wikiButtonAction:" destination="fmd-VD-Pzd" id="RRu-Kj-lv8"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q2G-sR-fA3">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AGe-ik-DDR" firstAttribute="leading" secondItem="Qay-qS-Ao0" secondAttribute="leadingMargin" constant="-16" id="LEr-fh-5rh"/>
+                            <constraint firstItem="AGe-ik-DDR" firstAttribute="top" secondItem="q2G-sR-fA3" secondAttribute="bottom" id="Npq-Ln-jGm"/>
+                            <constraint firstItem="q2G-sR-fA3" firstAttribute="leading" secondItem="Qay-qS-Ao0" secondAttribute="leadingMargin" constant="-16" id="PYW-tX-i9g"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="q2G-sR-fA3" secondAttribute="trailing" constant="-16" id="Paq-G9-sYK"/>
+                            <constraint firstItem="Sbq-0D-gYb" firstAttribute="top" secondItem="AGe-ik-DDR" secondAttribute="bottom" id="Pk8-lr-eFu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AGe-ik-DDR" secondAttribute="trailing" constant="-16" id="Qkl-mG-5Sh"/>
+                            <constraint firstItem="AGe-ik-DDR" firstAttribute="top" secondItem="q2G-sR-fA3" secondAttribute="bottom" id="ads-gh-Zw3"/>
+                            <constraint firstItem="q2G-sR-fA3" firstAttribute="top" secondItem="Qay-qS-Ao0" secondAttribute="topMargin" id="kVO-Jf-JYr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Dpe-Zr-ecc"/>
+                    <connections>
+                        <outlet property="imageView" destination="q2G-sR-fA3" id="6Np-kE-Hcl"/>
+                        <segue destination="hCv-XQ-juP" kind="show" identifier="showWikiSegue" id="5RP-1I-Ka4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oMH-Op-pBe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="976" y="-1012"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="eC1-gJ-g5o">
+            <objects>
+                <tableViewController storyboardIdentifier="tableViewSB" clearsSelectionOnViewWillAppear="NO" id="SZB-xY-xrF" customClass="TableViewController" customModule="StarWarsUniverse" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="sKm-dR-zq1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="StarWarsCell" textLabel="Riu-lK-ZQk" detailTextLabel="Jfk-uZ-1IB" imageView="2Vf-Ba-Kmz" style="IBUITableViewCellStyleSubtitle" id="JYh-4l-Nju">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JYh-4l-Nju" id="Xz1-d8-Fed">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Riu-lK-ZQk">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jfk-uZ-1IB">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" id="2Vf-Ba-Kmz">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="SZB-xY-xrF" id="x1A-BD-Bxa"/>
+                            <outlet property="delegate" destination="SZB-xY-xrF" id="zuG-Yf-GCX"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="c6a-WN-bae"/>
+                    <connections>
+                        <segue destination="fmd-VD-Pzd" kind="show" identifier="ShowDetailSB" id="imc-OQ-1Zf"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pbi-g0-X7L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="908" y="-1778"/>
+        </scene>
+        <!--Wiki View Controller-->
+        <scene sceneID="vTe-ka-OfS">
+            <objects>
+                <viewController id="hCv-XQ-juP" customClass="WikiViewController" customModule="StarWarsUniverse" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6io-1u-deg"/>
+                        <viewControllerLayoutGuide type="bottom" id="nB9-Nx-3ca"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SUA-z9-I7T">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ri4-pV-YUq">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="GbZ-Um-QQz">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ri4-pV-YUq" secondAttribute="trailing" constant="-16" id="BKV-Fx-BcW"/>
+                            <constraint firstItem="ri4-pV-YUq" firstAttribute="leading" secondItem="SUA-z9-I7T" secondAttribute="leadingMargin" constant="-16" id="Bfa-Ss-32k"/>
+                            <constraint firstItem="GbZ-Um-QQz" firstAttribute="leading" secondItem="SUA-z9-I7T" secondAttribute="leadingMargin" constant="274" id="E1C-fG-mrz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GbZ-Um-QQz" secondAttribute="trailing" constant="274" id="IIM-yO-V70"/>
+                            <constraint firstItem="nB9-Nx-3ca" firstAttribute="top" secondItem="GbZ-Um-QQz" secondAttribute="bottom" constant="290" id="LK2-Vb-duN"/>
+                            <constraint firstItem="nB9-Nx-3ca" firstAttribute="top" secondItem="ri4-pV-YUq" secondAttribute="bottom" id="hua-rT-YQU"/>
+                            <constraint firstItem="GbZ-Um-QQz" firstAttribute="top" secondItem="6io-1u-deg" secondAttribute="bottom" constant="226" id="lmH-II-16D"/>
+                            <constraint firstItem="ri4-pV-YUq" firstAttribute="top" secondItem="6io-1u-deg" secondAttribute="bottom" id="w9M-mS-Utg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="opH-wp-dIj"/>
+                    <connections>
+                        <outlet property="activityView" destination="GbZ-Um-QQz" id="j6G-dI-hhg"/>
+                        <outlet property="webView" destination="ri4-pV-YUq" id="aLN-cT-kt8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ArW-yN-9ad" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2040" y="-1004"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Jtp-FV-XOv">
+            <objects>
+                <navigationController id="cXJ-MN-aZp" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YwO-Uh-wIY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="SZB-xY-xrF" kind="relationship" relationship="rootViewController" id="c89-KD-MFm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W8P-9p-TL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="164" y="-1778"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="2ot-3B-mhs">
+            <objects>
+                <splitViewController id="8aH-sJ-c2i" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="cXJ-MN-aZp" kind="relationship" relationship="masterViewController" id="X30-bW-CQv"/>
+                        <segue destination="0CE-oP-T69" kind="relationship" relationship="detailViewController" id="2S2-4B-88M"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wpo-2Z-Lyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-904" y="-1426"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wFS-9B-T7e">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0CE-oP-T69" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fo7-FL-71H">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fmd-VD-Pzd" kind="relationship" relationship="rootViewController" id="QFu-NB-Jv6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MtR-ou-Sz2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="164" y="-1012"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="QFu-NB-Jv6"/>
+    </inferredMetricsTieBreakers>
+</document>
